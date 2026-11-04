@@ -8,7 +8,7 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd -P)"
 source "${ROOT_DIR}/hack/lib/init.sh"
 
 function test() {
-  uv run pytest
+  uv run --with "pytest-xdist>=3.6,<4" pytest -n logical
 }
 
 #
